@@ -1,5 +1,17 @@
 class Tennis
+
+  def initialize
+    @player1_score = 0
+    @player2_score = 0
+  end
+
+  def point_scored(player_number)
+    if player_number == 1
+      @player1_score = 15
+    end
+  end
+  
   def score 
-    "0-0"
+    "#{@player1_score}-#{@player2_score}"
   end
 end
