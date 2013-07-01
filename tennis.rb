@@ -21,10 +21,10 @@ class Tennis
   end
 
   def in_duece?
-    if @player1_score == 'Duece' && @player2_score == 'Duce'
-      true
+    if @player1_score == 'Duece' && @player2_score == 'Duece'
+      return true
     end
-    false
+    return false
   end
 
   def score_point_normal_mode(player_number)
@@ -32,6 +32,11 @@ class Tennis
       @player1_score = increase_score(@player1_score)
     elsif player_number == 2
       @player2_score = increase_score(@player2_score)
+    end
+
+    if @player1_score == 40 && @player2_score == 40
+      @player1_score = 'Duece'
+      @player2_score = 'Duece'
     end
   end
 
@@ -57,14 +62,12 @@ class Tennis
       return 'Player 2 wins!'
     end
 
-    if @player1_score == 40 && @player2_score == 40
-      @player1_score = 'Duece'
-      @player2_score = 'Duece'
-      return 'Duece'
-    end
-
     if @player1_score == 'Advantage In'
       return 'Advantage player 1'
+    end
+
+    if in_duece?
+      return 'Duece'
     end
 
     "#{@player1_score}-#{@player2_score}"
