@@ -53,13 +53,17 @@ describe Tennis, "#begining of game" do
   end
 
   it "goes into duece when both players have 40 points" do
-    @tennis.point_scored(1)
-    @tennis.point_scored(1)
-    @tennis.point_scored(1)
-    @tennis.point_scored(2)
-    @tennis.point_scored(2)
-    @tennis.point_scored(2)
+    setup_duece
     @tennis.score.should eq('Duece') 
+  end
+
+  def setup_duece
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
   end
 end
 
