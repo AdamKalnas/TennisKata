@@ -21,12 +21,16 @@ class Tennis
       30
     when 30
       40
+    when 40
+      "wins"
     end
-      
-    
   end
 
   def score 
+    if @player1_score == 'wins'
+      return 'Player 1 wins!'
+    end
+
     "#{@player1_score}-#{@player2_score}"
   end
 end

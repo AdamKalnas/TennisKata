@@ -36,4 +36,13 @@ describe Tennis, "#begining of game" do
     @tennis.score.should eq "40-30"
   end
 
+  it "annouces player 1 wins when they score a point after having 40" do
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.score.should eq "Player 1 wins!"
+  end
+  
+
 end
