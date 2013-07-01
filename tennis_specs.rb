@@ -69,6 +69,21 @@ describe Tennis, "#begining of game" do
     @tennis.score.should eq 'Advantage player 2'
   end
 
+  it 'player 1 wins in duece' do
+    setup_duece
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.score.should eq 'Player 1 wins!'
+  end
+
+  it 'player 2 wins in duece' do
+    setup_duece
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.score.should eq 'Player 2 wins!'
+  end
+
+
   def setup_duece
     @tennis.point_scored(1)
     @tennis.point_scored(1)
