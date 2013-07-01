@@ -6,7 +6,25 @@ class Tennis
   end
 
   def point_scored(player_number)
-    score_point_normal_mode(player_number)
+    if in_duece?
+      score_duece_point(player_number)
+    else
+      score_point_normal_mode(player_number)
+    end
+  end
+
+  def score_duece_point(player_number) 
+      if @player1_score == 'Duece'
+        @player1_score = 'Advantage In'
+        @player2_score = 'Advantage Out'
+      end
+  end
+
+  def in_duece?
+    if @player1_score == 'Duece' && @player2_score == 'Duce'
+      true
+    end
+    false
   end
 
   def score_point_normal_mode(player_number)
@@ -43,6 +61,10 @@ class Tennis
       @player1_score = 'Duece'
       @player2_score = 'Duece'
       return 'Duece'
+    end
+
+    if @player1_score == 'Advantage In'
+      return 'Advantage player 1'
     end
 
     "#{@player1_score}-#{@player2_score}"
