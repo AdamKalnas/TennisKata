@@ -43,7 +43,6 @@ describe Tennis, "#begining of game" do
     @tennis.point_scored(1)
     @tennis.score.should eq "Player 1 wins!"
   end
-  
 
   it "annouces player 2 wins when they score a point after having 40" do
     @tennis.point_scored(2)
@@ -52,4 +51,15 @@ describe Tennis, "#begining of game" do
     @tennis.point_scored(2)
     @tennis.score.should eq "Player 2 wins!"
   end
+
+  it "goes into duece when both players have 40 points" do
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.score.should eq('Duece') 
+  end
 end
+

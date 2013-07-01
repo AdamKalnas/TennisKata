@@ -35,6 +35,12 @@ class Tennis
       return 'Player 2 wins!'
     end
 
+    if @player1_score == 40 && @player2_score == 40
+      @player1_score = 'Duece'
+      @player2_score = 'Duece'
+      return 'Duece'
+    end
+
     "#{@player1_score}-#{@player2_score}"
   end
 end
