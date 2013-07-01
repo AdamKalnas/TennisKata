@@ -15,4 +15,9 @@ describe Tennis, "#begining of game" do
     @tennis.score.should eq "15-0"
   end
 
+  it "returns 0-15 when player 2 scores" do
+    @tennis.point_scored(2)
+    @tennis.score.should eq "0-15"
+  end
+
 end
