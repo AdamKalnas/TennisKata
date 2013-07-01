@@ -19,5 +19,12 @@ describe Tennis, "#begining of game" do
     @tennis.point_scored(2)
     @tennis.score.should eq "0-15"
   end
-
+  
+  it "returns 30-15 when player 1 scores twice and player 2 scores once" do
+    @tennis.point_scored(1)
+    @tennis.point_scored(1)
+    @tennis.point_scored(2)
+    @tennis.score.should eq "30-15"
+  end
+  
 end
