@@ -45,4 +45,11 @@ describe Tennis, "#begining of game" do
   end
   
 
+  it "annouces player 2 wins when they score a point after having 40" do
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.point_scored(2)
+    @tennis.score.should eq "Player 2 wins!"
+  end
 end

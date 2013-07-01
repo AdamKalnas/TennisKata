@@ -31,6 +31,10 @@ class Tennis
       return 'Player 1 wins!'
     end
 
+    if @player2_score == 'wins'
+      return 'Player 2 wins!'
+    end
+
     "#{@player1_score}-#{@player2_score}"
   end
 end
