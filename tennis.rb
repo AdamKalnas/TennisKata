@@ -16,12 +16,6 @@ class Tennis
   end
 
   def score_duece_point(player_number)
-    if @player1_score == 'Advantage In'
-      @player1_score = 'wins'
-    end
-  end
-
-  def score_duece_point(player_number)
     if(player_number == 1)
        if @player1_score == 'Duece'
         @player1_score = 'Advantage In'
@@ -39,16 +33,22 @@ class Tennis
     if(player_number == 1)
        if @player1_score == 'Advantage In'
         @player1_score = 'wins'
+      elsif @player1_score == 'Advantage Out'
+        @player1_score = 'Duece'
+        @player2_score = 'Duece'
       end
     else
       if @player2_score == 'Advantage In'
         @player2_score = 'wins'
+      elsif @player2_score == 'Advantage Out'
+        @player1_score = 'Duece'
+        @player2_score = 'Duece'
       end
     end
   end
 
   def in_advantage?
-    if @player1_score.to_s.include? 'Advantage' #|| @player2_score.to_s.include? 'Advantage'
+    if @player1_score.to_s.include? 'Advantage'
       return true
     end
     false
